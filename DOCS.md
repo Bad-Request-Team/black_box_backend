@@ -8,7 +8,7 @@ Messages from user:
 
 1) type: "start_file_sending"
 2) type: "file" <br>
-   file_pice: bloob
+   file_price: blob
 3) type: "end_file_sending"
 
 Messages to user:
@@ -31,7 +31,7 @@ Messages to user:
 
 endpoint: /neural_ws
 
-Messages from Neural:
+Messages from neural:
 
 1) avg_speed: float (x >= 0) <br>
    aggressive_percent: float (0 <= x <= 1) <br>

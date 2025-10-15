@@ -1,2 +1,4 @@
-# black_box_backend
-Backend for black_box app. Using Saint Christopher ai.
+<img src="Logo.png" width="30%" alt=""/>
+
+# Black Box Backend
+Backend for Black Box app. Using Saint Christopher ai.
