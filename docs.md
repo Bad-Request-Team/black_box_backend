@@ -2,6 +2,8 @@
 
 ### User web socket
 
+endpoint: /ws/user
+
 Messages from user:
 
 1) type: "start_file_sending"
@@ -26,6 +28,8 @@ Messages to user:
 
 
 ### Neural web socket
+
+endpoint: /ws/neural
 
 Messages from Neural:
 
