@@ -2,7 +2,7 @@
 
 ### User web socket
 
-endpoint: /ws/user
+endpoint: /user_ws
 
 Messages from user:
 
@@ -29,7 +29,7 @@ Messages to user:
 
 ### Neural web socket
 
-endpoint: /ws/neural
+endpoint: /neural_ws
 
 Messages from Neural:
 
