@@ -8,7 +8,7 @@ Messages from user:
 
 1) type: "start_file_sending"
 2) type: "file" <br>
-   file_pice: bloob
+   file_pice: blob
 3) type: "end_file_sending"
 
 Messages to user:
