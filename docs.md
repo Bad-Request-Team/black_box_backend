@@ -34,7 +34,7 @@ endpoint: /ws/neural
 Messages from Neural:
 
 1) avg_speed: float (x >= 0) <br>
-   aggressive_percent: float (0 <= x <= 1)
+   aggressive_percent: float (0 <= x <= 1) <br>
    drivers_count: int (x >= 0) <br>
    aggressive_drivers_count: int (x >= 0) <br>
    normal_drivers_count: int (x >= 0) <br>
