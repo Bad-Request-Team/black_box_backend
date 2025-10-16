@@ -23,7 +23,9 @@ Messages to user:
    normal_drivers_count: int (x >= 0) <br>
    abrupt_braking_count: int (x >= 0) <br>
    abrupt_acceleration_count: int (x >= 0) <br>
-   avg_speed: float (x >= 0)
+   avg_speed: float (x >= 0) <br>
+   avg_angle: float (x >= 0) <br>
+   avg_acc: float (x >= 0)
 
 
 ### Neural web socket
