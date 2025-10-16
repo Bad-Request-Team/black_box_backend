@@ -6,3 +6,4 @@ sqlalchemy
 websockets
 pydantic
 starlette
+opencv-python
