@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.websockets import WebSocket
 
-router = APIRouter("/user_ws")
+router = APIRouter(prefix="/user_ws")
 
 
 @router.websocket("/")

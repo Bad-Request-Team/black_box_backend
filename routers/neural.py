@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.websockets import WebSocket
 
-router = APIRouter("/neural_ws")
+router = APIRouter(prefix="/neural_ws")
 
 
 @router.websocket("/")

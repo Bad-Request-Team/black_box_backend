@@ -1,6 +1,9 @@
+from database import RoadAnalyst
+
+
 class AnalystWorker:
     def __init__(self, connect_link: str):
-        pass
+        self.connect_link = connect_link
 
-    def add(self):
+    def add(self, data: RoadAnalyst):
         pass
