@@ -14,8 +14,6 @@ class NeuralConnector:
     async def connect(self, socket: WebSocket):
         self.__current_socket = socket 
         await socket.accept()
-        while True:
-            await asyncio.sleep(60)
 
     async def send_file(self, task_file: str):
         self.__task_file = task_file
@@ -23,9 +21,9 @@ class NeuralConnector:
         count_frames = 0
         while True:
             ret, frame = video.read()
+            frame = cv2.resize(frame, (640, 640))
             byte_frame = frame.tobytes()
-            data = {"frame": byte_frame, "frame_id": count_frames}
-            await self.__current_socket.send_json(data)
+            await self.__current_socket.send_bytes(byte_frame)
             answer = await self.__current_socket.receive_json()
             if answer is not None:
                 data = AnalystData.model_validate_json(answer)
