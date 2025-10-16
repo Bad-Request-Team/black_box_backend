@@ -9,7 +9,7 @@ class States:
     def add_neural(self, neural: NeuralConnector):
         self.__neural_without_task.append(neural)
 
-    def get_neural(self):
+    def get_neural(self) -> NeuralConnector:
         neural = self.__neural_without_task[0]
         self.__neural_with_task.append(neural)
         self.__neural_without_task.remove(neural)

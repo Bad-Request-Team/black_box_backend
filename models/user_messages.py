@@ -1,10 +1,9 @@
-from pydantic import BaseModel
-from pydantic import confloat, conint
+from pydantic import BaseModel, confloat, conint
 
 
 class GraphicMessage(BaseModel):
-    aggressive_percent: confloat(ge=0, le=1)
-    avg_speed: confloat(ge=0) | None
+    aggressive_percent: list[confloat(ge=0, le=1)]
+    avg_speed: list[confloat(ge=0)] | None
 
 
 class LastMessage(BaseModel):

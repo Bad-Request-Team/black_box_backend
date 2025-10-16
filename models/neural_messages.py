@@ -1,5 +1,4 @@
-from pydantic import BaseModel
-from pydantic import confloat, conint
+from pydantic import BaseModel, confloat, conint
 
 
 class AnalystData(BaseModel):
