@@ -11,12 +11,12 @@ states = States()
 async def user_socket(socket: WebSocket):
     """Web scoket connect for user interface"""
     user_connector = UserConnector(states)
-    await user_connector.connect()
+    await user_connector.connect(socket)
 
 
 @router.websocket("/neural_ws")
 async def neural_socket(socket: WebSocket):
-    """Web scoket connect for neural"""
+    """Web scoket connect for ssneural"""
     neural = NeuralConnector()
     states.add_neural(neural)
-    await neural.connect()
+    await neural.connect(socket)
