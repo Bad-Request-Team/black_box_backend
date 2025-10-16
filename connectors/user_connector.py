@@ -5,7 +5,8 @@ import datetime
 from fastapi.websockets import WebSocket
 
 from connectors.states import States
-from models import GraphicMessage
+from models import GraphicMessage, LastMessage, AnalystData
+from connectors.calculator import Calculator
 
 
 class _FileReceiver:
@@ -48,6 +49,7 @@ class UserConnector:
         self.__current_socket: WebSocket | None = None
         self.__states = states
         self.__reciver = _FileReceiver()
+        self.__calculator = Calculator()
 
     async def connect(self, socket: WebSocket):
         self.__current_socket = socket 
@@ -66,10 +68,11 @@ class UserConnector:
     
     async def send_answers(self, file_name: str):
         neural = self.__states.get_neural()
-        neural_data = None
+        last_data = None
         for data in await neural.send_file(file_name):
-            graphic = GraphicMessage(aggressive_percent=data.aggressive_percent, avg_speed=data.avg_speed)
+            last_data = data
+            graphic = self.__calculator.calc_graphic()
             self.__current_socket.send_json(graphic.model_dump_json())
             asyncio.sleep(0.1)
-
-    
+        self.__current_socket.send_json(self.__calculator.calc_last(last_data).model_dump_json())
+        

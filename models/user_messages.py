@@ -3,7 +3,7 @@ from pydantic import BaseModel, confloat, conint
 
 class GraphicMessage(BaseModel):
     aggressive_percent: list[confloat(ge=0, le=1)]
-    avg_speed: list[confloat(ge=0)] | None
+    lane_percent: list[confloat(ge=0)]
 
 
 class LastMessage(BaseModel):
@@ -12,5 +12,6 @@ class LastMessage(BaseModel):
     normal_drivers_count: conint(ge=0)
     abrupt_braking_count: conint(ge=0)
     abrupt_acceleration_count: conint(ge=0)
-    max_speed: confloat(ge=0) | None
-    min_speed: confloat(ge=0) | None
+    avg_speed: confloat(ge=0)
+    avg_angle: confloat(ge=0)
+    avg_acc: confloat(ge=0)
